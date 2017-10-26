@@ -1,3 +1,3 @@
-# adfadf
+# Aqua 프로젝트 스타트
 
-To be implemented..
+구현 중입니다.
