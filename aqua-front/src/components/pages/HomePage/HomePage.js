@@ -9,10 +9,10 @@ const HomePage = () => {
       <PolyBackground>
         <Block center shadow>
           <h1>
-            모의 거래소에서 다양한 가상화폐를 거래해보세요.
+            렌더 페이지 만들기
           </h1>
           <h2>
-            실제 거래소의 실시간 데이터에 기반하여 거래가 진행됩니다.
+            어떻게 만들까요?
           </h2>
         </Block>
       </PolyBackground>

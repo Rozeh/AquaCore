@@ -118,5 +118,9 @@
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6"
   },
-  "proxy": "http://localhost:4000/"
+  "proxy": "http://localhost:4000/",
+  "description": "구현 중입니다.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

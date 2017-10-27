@@ -9,10 +9,10 @@ const OperPage = () => {
       <PolyBackground>
         <Block center shadow>
           <h1>
-            실무강의세요.
+            실무적인 강의 페이지를 만들꺼에요
           </h1>
           <h2>
-            블라블라 진행됩니다.
+            SOCIAL 스타일로 만들어 볼까요?
           </h2>
         </Block>
       </PolyBackground>

@@ -9,10 +9,10 @@ const StarPage = () => {
       <PolyBackground>
         <Block center shadow>
           <h1>
-            여기는 스타페이지.
+            여기는 STAR IT 기업에 맞춘 사이트를 만들꺼에요
           </h1>
           <h2>
-            블라블라
+            생각해봅시다.!!
           </h2>
         </Block>
       </PolyBackground>
