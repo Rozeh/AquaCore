@@ -18,6 +18,28 @@ exports.localRegister = async (ctx) => {
     ctx.status = 400;
     return;
   }
-  ctx.body = body
+
+  const { displayName, email, password} = body;
+  try{
+    //이메일 디스플레이네임 중복 방지
+    const exists = await User.findExistancy({
+      displayName,
+      email
+    });
+    if(exists){
+      ctx.status = 409;
+      const key = exists.email === email ?  'email': 'displayName';
+      ctx.body = {
+        key
+      };
+      return;
+    }
+    const user = await User.localRegister({
+      displayName, email, password
+    });
+    ctx.body = user;
+  }catch(e){
+    ctx.throw(500);
+  }
 
 };
