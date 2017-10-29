@@ -37,7 +37,7 @@ const LoginModal = ({
       <div className={cx('login-modal')}>
         <div className={cx('bar')}></div>
         <div className={cx('content')}>
-          <h3>이메일로 {modeText}</h3>
+          <h3>id로 {modeText}</h3>
           <InputError error={localLoginError} noMarginTop/>
           <div className={cx('form')}>
             <Input 

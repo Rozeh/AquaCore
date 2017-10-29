@@ -12,8 +12,7 @@ const Block = ({color, background, children, center, shadow}) => {
 
   return (
     <div style={style} className={cx('block', {
-      center,
-      shadow
+      center, shadow
     })}>
       {children}
     </div>

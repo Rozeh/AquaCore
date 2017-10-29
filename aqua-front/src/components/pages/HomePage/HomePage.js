@@ -5,7 +5,7 @@ import {HeaderContainer} from 'containers';
 const HomePage = () => {
   return (
     <PageTemplate 
-      header={<HeaderContainer/>}>
+      header={<HeaderContainer />}>
       <PolyBackground>
         <Block center shadow>
           <h1>

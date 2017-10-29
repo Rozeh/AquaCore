@@ -17,8 +17,6 @@ class App extends Component {
         <Route path="/aic" component={AicPage} />        
         <Route path="/oper" component={OperPage} />        
         <Route path="/star" component={StarPage} />        
-        <Route path="/trade" component={TradePage}/>
-        <Route path="/register" component={RegisterPage}/>
         <ScreenMaskContainer/>
         <LoginModalContainer/>
         <UserLoader/>
