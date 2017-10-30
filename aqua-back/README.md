@@ -1,4 +1,4 @@
-# Aqua-backend
+# bitimulate-backend
 
 ## Stack
 - Node.js
@@ -7,4 +7,4 @@
   - Websocket
 - MongoDB
 
-> node.js 8
+> More information will be documented later on.

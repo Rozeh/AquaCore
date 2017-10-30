@@ -23,5 +23,5 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.listen(port, () => {
-  console.log(`bitimulate server is listening to port ${port}`);
+  console.log(`Aqua server is listening to port ${port}`);
 });

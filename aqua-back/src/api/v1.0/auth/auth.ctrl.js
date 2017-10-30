@@ -19,27 +19,44 @@ exports.localRegister = async (ctx) => {
     return;
   }
 
-  const { displayName, email, password} = body;
-  try{
-    //이메일 디스플레이네임 중복 방지
+  const { displayName, email, password } = body;
+
+  try {
+    // check email / displayName existancy
     const exists = await User.findExistancy({
       displayName,
       email
     });
-    if(exists){
+
+    if(exists) {
       ctx.status = 409;
-      const key = exists.email === email ?  'email': 'displayName';
+      const key = exists.email === email ? 'email' : 'displayName';
       ctx.body = {
         key
       };
       return;
     }
+
+    // creates user account
     const user = await User.localRegister({
       displayName, email, password
     });
+
     ctx.body = user;
-  }catch(e){
+    const accessToken = await token.generateToken({
+      user: {
+        _id: user._id,
+        displayName
+      }
+    }, 'user');
+
+    // configure accessToken to httpOnly cookie
+    ctx.cookies.set('access_token', accessToken, {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 * 7
+    })
+    ctx.body = user
+  } catch (e) {
     ctx.throw(500);
   }
-
 };

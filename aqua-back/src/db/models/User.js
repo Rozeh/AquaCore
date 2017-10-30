@@ -3,7 +3,6 @@ const { Schema } = mongoose;
 const crypto = require('crypto');
 
 const { PASSWORD_HASH_KEY: secret } = process.env;
-console.log(secret);
 
 function hash(password) {
   return crypto.createHmac('sha256', secret).update(password).digest('hex');
