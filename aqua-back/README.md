@@ -1,10 +1,12 @@
-# bitimulate-backend
+# Aqua-backend
 
 ## Stack
-- Node.js
+- Node.js version 8
   - Koa
   - Mongoose
-  - Websocket
+  - JWT json Web Token
+  - JOI Validate
+  - Chalk
+  - Morgan
+  - Koa BodyParser
 - MongoDB
-
-> More information will be documented later on.
