@@ -38,7 +38,7 @@ exports.localRegister = async (ctx) => {
       return;
     }
 
-    // creates user account
+    // 계정 생성
     const user = await User.localRegister({
       displayName, email, password
     });
@@ -59,6 +59,8 @@ exports.localRegister = async (ctx) => {
     ctx.throw(500);
   }
 };
+
+//로그인 구현
 
 exports.localLogin = async (ctx) => {
   const { body } = ctx.request;
@@ -110,4 +112,17 @@ exports.localLogin = async (ctx) => {
     }catch(e){
       ctx.throw(e)
     }
+}
+
+exports.check = (ctx) => {
+  const {user} = ctx.request;
+  if(!user){
+    ctx.status = 403;
+    return;
+  }
+
+  ctx.body = {
+    user
+  };
+
 }
