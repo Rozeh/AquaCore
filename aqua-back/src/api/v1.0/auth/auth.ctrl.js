@@ -1,6 +1,5 @@
 const Joi = require('joi');
 const User = require('db/models/User');
-const token = require('lib/token');
 
 
 //회원가입
@@ -51,7 +50,11 @@ exports.localRegister = async (ctx) => {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24 * 7
     })
-    ctx.body = user
+    ctx.body = {
+      displayName,
+      _id: user._id,
+      metaInfo: user.metaInfo
+    }
   } catch (e) {
     ctx.throw(500);
   }
@@ -96,6 +99,13 @@ exports.localLogin = async (ctx) => {
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 7
       });
+
+      const {displayName, _id, metaInfo} = user;
+      ctx.body = {
+        displayName,
+        _id,
+        metaInfo
+      }
 
     }catch(e){
       ctx.throw(e)
