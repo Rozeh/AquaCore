@@ -1,0 +1,31 @@
+.fg0 {
+    display: flex;
+    flex-direction: row;
+}
+.fg1 {
+    flex-grow: 1;
+}
+.fg2 {
+    flex-grow: 2;
+}
+.layer{
+    height:100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.BMT1{
+    padding: 1rem;
+    font-size: 2rem;
+    color:white;
+    &:hover{
+    background:#e50020;
+    }
+}
+.BMT2{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    color:white;
+    &:hover{
+    background:#e50020;
+    }
+}

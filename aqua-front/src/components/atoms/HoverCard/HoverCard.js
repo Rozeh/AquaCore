@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 const HoverCard = ({className, ...rest}) => {
-  const ob = className? 'Big' : 'Mini'
+  const ob = className? 'Big':'Mini'
   return (
     <div className={cx('hover-card', ob)}{...rest}>
       

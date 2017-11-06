@@ -4,7 +4,7 @@ import {
     Section1Box, 
     OwlCarousel, 
     SectionBox,
-    BigAndMini
+    BigAndMini2
 } from 'components';
 import {HeaderContainer, FooterContainer} from 'containers';
 
@@ -19,10 +19,10 @@ const LezhinPage = () => {
             <h1>렉트 카드</h1> 
         </SectionBox>
         <SectionBox>
-            <h1>빅앤미니</h1>
+            <BigAndMini2 />
         </SectionBox>
         <SectionBox>
-            <BigAndMini />
+            <h1>핫 히어로카드</h1>
         </SectionBox>
         </LandingTemplate>
     );
