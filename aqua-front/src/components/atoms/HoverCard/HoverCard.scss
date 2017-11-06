@@ -1,9 +1,23 @@
 @import 'utils';
 
 .hover-card {
-  background: white;
   transition: .3s ease-in;
+  @include material-shadow(1, 0.1);
   &:hover {
-    @include material-shadow(4, 0.5);
+    @include material-shadow(4, 0.8);
   }
+  &.Big {
+    flex-basis: 250px;
+    height: 384px;
+    background-size: cover;
+    flex-grow: 2;
+  }
+
+  &.Mini{
+    flex-basis: 250px;
+    height: 180px;
+    background-size: cover;
+    margin: 0 0px 24px 24px;
+  }
+
 }

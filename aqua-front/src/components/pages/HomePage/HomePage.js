@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageTemplate, PolyBackground, Block } from 'components';
+import { PageTemplate, PolyBackground, OwlCarousel, Section1Box } from 'components';
 import {HeaderContainer} from 'containers';
 
 const HomePage = () => {
@@ -7,14 +7,9 @@ const HomePage = () => {
     <PageTemplate 
       header={<HeaderContainer />}>
       <PolyBackground>
-        <Block center shadow>
-          <h1>
-            렌더 페이지 만들기
-          </h1>
-          <h2>
-            어떻게 만들까요?
-          </h2>
-        </Block>
+          <Section1Box>
+            <OwlCarousel />
+          </Section1Box>
       </PolyBackground>
     </PageTemplate>
   );

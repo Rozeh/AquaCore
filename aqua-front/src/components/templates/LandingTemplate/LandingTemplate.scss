@@ -1,0 +1,35 @@
+@import 'utils';
+
+.page {
+  header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z-index-for('header');
+  }
+
+  .content {
+    &.padding {
+      padding-top: 3.5rem;
+    }
+    &.responsive {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      @include responsive();
+    }
+  }
+  
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 100;
+    z-index: 6;
+    .innerFooter {
+      width: 100%;
+      color: white;
+      background-color: #3a3a3a;
+      height: 318px;
+    }
+  }
+}

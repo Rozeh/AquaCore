@@ -1,0 +1,32 @@
+.fg0{
+    display: flex;
+    flex-direction: row;
+}
+.fg1{
+    flex-grow: 1;
+}
+
+.layer{
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    transition: all .3s ease-in;
+    
+    .BigTitle{
+        display: block;
+        padding: 0.8rem;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #fff;
+        font-family: 'Nanum Barun Gothic';
+     
+    }
+    .MiniTitle{
+        display: block;
+        padding: 0.5rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        color: #fff;
+        font-family: 'Nanum Barun Gothic';   
+    }
+}
