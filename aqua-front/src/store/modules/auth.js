@@ -3,7 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { Map, fromJS } from 'immutable';
 import { pender } from 'redux-pender';
 import * as AuthAPI from 'lib/api/auth';
-import social from 'lib/social';
+
 
 // action types
 const TOGGLE_LOGIN_MODAL = 'auth/TOGGLE_LOGIN_MODAL';
@@ -12,8 +12,6 @@ const CHANGE_INPUT = 'auth/CHANGE_INPUT';
 const SET_ERROR = 'auth/SET_ERROR';
 const CHECK_EMAIL = 'auth/CHECK_EMAIL';
 const LOCAL_LOGIN  = 'auth/LOCAL_LOGIN';
-const PROVIDER_LOGIN = 'auth/PROVIDER_LOGIN';
-const SOCIAL_LOGIN = 'auth/SOCIAL_LOGIN';
 
 // action creator
 export const toggleLoginModal = createAction(TOGGLE_LOGIN_MODAL);
@@ -22,8 +20,6 @@ export const changeInput = createAction(CHANGE_INPUT); // ({name, value})
 export const setError = createAction(SET_ERROR);  // ({ email, password }) [nullable]
 export const checkEmail = createAction(CHECK_EMAIL, AuthAPI.checkEmail); // (email)
 export const localLogin = createAction(LOCAL_LOGIN, AuthAPI.localLogin); // ({email, password})
-export const providerLogin = createAction(PROVIDER_LOGIN, (provider) => social[provider](), provider => provider);
-export const socialLogin = createAction(SOCIAL_LOGIN, AuthAPI.socialLogin);
 
 // initial state
 const initialState = Map({
@@ -83,28 +79,4 @@ export default handleActions({
         }))
       }
     }),
-    ...pender({
-        type: PROVIDER_LOGIN,
-        onSuccess: (state, action) => {
-          const {
-            payload: accessToken,
-            meta: provider
-          } = action;
-
-          return state.set('socialInfo', Map({
-            accessToken,
-            provider
-          }));
-        }
-    }),
-    ...pender({
-      type: SOCIAL_LOGIN,
-      onSuccess: (state, action) => {
-        const { data: loginResult } = action.payload;
-        if(action.payload.status === 204) {
-          return state.set('redirectToRegister', true);
-        }
-        return state.set('loginResult', loginResult);
-      }
-    })
 }, initialState);
